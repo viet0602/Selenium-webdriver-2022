@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Xpath_And_CSS {
+public class Register_Xpath_CSS {
 	WebDriver driver;
 
 	String invalidEmail = "safsdf@email@email";
@@ -33,8 +33,7 @@ public class Xpath_And_CSS {
 
 	@BeforeClass
 	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver",
-				"D:/Selenium/SeleniumWebdriver2022/Viet_SeleniumWebdriver2022/browserDriver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:/Selenium/SeleniumWebdriver2022/Viet_SeleniumWebdriver2022/browserDriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -128,8 +127,9 @@ public class Xpath_And_CSS {
 		driver.findElement(passwprdConfirmTextBox).sendKeys(validPassword);
 		driver.findElement(phoneTextBox).sendKeys("1236547");
 		driver.findElement(registerButton).click();
-		String phoneNumberInvalidError = driver.findElement(phoneTextErrorText).getText();
-		Assert.assertEquals(phoneNumberInvalidError, "Số điện thoại bắt đầu bằng: 09 - 03 - 012 - 016 - 018 - 019");
+//		String phoneNumberInvalidError = driver.findElement(phoneTextErrorText).getText();
+//		Assert.assertEquals(phoneNumberInvalidError, "Số điện thoại bắt đầu bằng: 09 - 03 - 012 - 016 - 018 - 019");
+		Assert.assertTrue(driver.findElement(phoneTextErrorText).isDisplayed(), "Số điện thoại bắt đầu bằng: 09 - 03 - 012 - 016 - 018 - 019");
 	}
 
 	@AfterClass
