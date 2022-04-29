@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class WebBrowserElement {
+public class WebBrowser {
 	WebDriver driver;
 	By MyAccount_Footer_Link_Text = By.cssSelector("[class='footer-container'] [title='My Account']");
 	By Create_An_Account_Button = By.cssSelector("[title='Create an Account']");
@@ -21,16 +21,7 @@ public class WebBrowserElement {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
-
-	@Test
-	public void TC_01_VerifyUrl() {
-		driver.get("http://live.techpanda.org/");
-		driver.findElement(MyAccount_Footer_Link_Text).click();
-		Assert.assertEquals(driver.getCurrentUrl(), "http://live.techpanda.org/index.php/customer/account/login/");
-		driver.findElement(Create_An_Account_Button).click();
-		Assert.assertEquals(driver.getCurrentUrl(), "http://live.techpanda.org/index.php/customer/account/create/");
-	}
-
+ 
 	@Test
 	public void TC_02_VerifyTitle() {
 		driver.get("http://live.techpanda.org/");

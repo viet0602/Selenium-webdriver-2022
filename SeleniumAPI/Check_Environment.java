@@ -17,8 +17,7 @@ public class Check_Environment {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("https://demo.guru99.com/v4/");
-	}
+	}//
 	@Test
 	public void TC_01_ValidateCurrentUrl() {
 		//Login Page URL matching
