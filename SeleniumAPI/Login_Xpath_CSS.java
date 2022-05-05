@@ -35,7 +35,7 @@ public class Login_Xpath_CSS {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
-
+	@Test
 	public void TC_01_LoginWithEmptyEmailAndPassWord() {
 		driver.get("http://live.techpanda.org/");
 		driver.findElement(MyAccount_Footer_Link_Text).click();
@@ -45,7 +45,7 @@ public class Login_Xpath_CSS {
 		Assert.assertTrue(driver.findElement(Email_Error_Text).isDisplayed(), "This is a required field.");
 		Assert.assertTrue(driver.findElement(PassWord_Error_Text).isDisplayed(), "This is a required field.");
 	}
-
+	@Test
 	public void TC_02_LoginWithInvalidEmail() {
 		driver.get("http://live.techpanda.org/");
 		driver.findElement(MyAccount_Footer_Link_Text).click();
@@ -55,7 +55,7 @@ public class Login_Xpath_CSS {
 		Assert.assertTrue(driver.findElement(By.id("advice-validate-email-email")).isDisplayed(), "Please enter a valid email address. For example johndoe@domain.com.");
 
 	}
-
+	@Test
 	public void TC_03_LoginWithPassWordLessThan6Chars() {
 		driver.get("http://live.techpanda.org/");
 		driver.findElement(MyAccount_Footer_Link_Text).click();
